@@ -1,27 +1,38 @@
+#Serviços que o projeto necessita
 services:
+  #Inicia o container do Banco de dados usando uma versao expecificada
   postgre:
     image: postgres:13.13
+    #Informa as postas de comunicação
     ports:
       - 5432:5432
+    #Variaveis de ambiente que o Banco necessita
     environment:
       POSTGRES_PASSWORD: pg1234
       POSTGRES_USER: kubenews
       POSTGRES_DB: kubenews
+  #Carrega a imagem ja existente referente ao projeto
   kubenews:
     image: alessandropsantos/privado_pessoal:kubenewsv1
+    #Obriga a esperar a inicialização do Banco para que projeto funcione
     depends_on:
       - postgre
+    #Atualiza as informacoes e da rebuild na imagem conforme dados
     build: 
       context: ./src
       dockerfile: ./Dockerfile
+    #Libera porta de comunicação
     ports:
       - 8080:8080
+    #Variaveis de ambiente necessaria para o projeto comunciar com o banco
     environment:
       DB_DATABASE: kubenews
       DB_USERNAME: kubenews
       DB_PASSWORD: pg1234
       DB_HOST: postgre
-  
+
+#Tipo de rede que o projeto ira usar para comunicar os containers 
 networks:
   kubenews_net:
+    #Este é um tipo, existe outros
     driver: bridge
