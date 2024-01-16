@@ -7,3 +7,12 @@ services:
       POSTGRES_PASSWORD: pg1234
       POSTGRES_USER: kubenews
       POSTGRES_DB: kubenews
+  kubenews:
+    image: alessandropsantos/privado_pessoal:kubenewsv1
+    ports:
+      - 8080:8080
+    environment:
+      DB_DATABASE: kubenews
+      DB_USERNAME: kubenews
+      DB_PASSWORD: pg1234
+      DB_HOST: postgre
