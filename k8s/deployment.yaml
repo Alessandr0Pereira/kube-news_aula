@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
         - name: postgre
-          image: postegres:13.13
-          ports:
+          image: postgres:13.13
+          ports: 
             - containerPort: 5432
           env:
             - name: POSTGRES_PASSWORD
