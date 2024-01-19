@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
       - name: kubenews
-        image: alessandropsantos/privado_pessoal:kubenewsv1
+        image: alessandropsantos/privado_pessoal:kubenewsv2
         ports:
         - containerPort: 8080
         env:
