@@ -43,11 +43,11 @@ spec:
         ports:
         - containerPort: 8080
         env:
-            - name: DB_DATABASE
-              value: kubenews
-            - name: DB_USERNAME
-              value: kubenews
-            - name: DB_PASSWORD
-              value: pg1234
-            - name: DB_HOST
-              value: postgre
+        - name: DB_DATABASE
+          value: kubenews
+        - name: DB_USERNAME
+          value: kubenews
+        - name: DB_PASSWORD
+          value: pg1234
+        - name: DB_HOST
+          value: postgre
