@@ -58,7 +58,7 @@ spec:
         - name: DB_USERNAME
           value: kubenews
         - name: DB_PASSWORD
-          value: pg12345
+          value: pg1234
         - name: DB_HOST
           value: postgre
       imagePullSecrets:
