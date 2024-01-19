@@ -39,6 +39,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
+  replicas: 10
   selector:
     matchLabels:
       app: kubenews
@@ -74,4 +75,5 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
+    nodePort: 30000
   type: NodePort
