@@ -61,6 +61,8 @@ spec:
           value: pg12345
         - name: DB_HOST
           value: postgre
+      imagePullSecrets:
+        - name: acessar-repositorio-privado-docker
 ---
 apiVersion: v1
 kind: Service
