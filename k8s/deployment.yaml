@@ -24,6 +24,16 @@ spec:
             - name: POSTGRES_DB
               value: kubenews
 ---
+apiVersion: v1
+Kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    app: postgre
+  ports:
+    - port: 5432
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,3 +61,14 @@ spec:
           value: pg1234
         - name: DB_HOST
           value: postgre
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubenews
+spec:
+  selector:
+    app: kubenews
+  ports:
+  - port: 80
+    targetPort: 8080
