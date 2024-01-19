@@ -25,7 +25,7 @@ spec:
               value: kubenews
 ---
 apiVersion: v1
-Kind: Service
+kind: Service
 metadata:
   name: postgre
 spec:
